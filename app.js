@@ -16,38 +16,38 @@ closeShopping.addEventListener('click', ()=>{
 let products = [
     {
         id: 1,
-        name: 'PRODUCT NAME 1',
-        image: '1.PNG',
+        name: 'BUNNYCHOW',
+        image: '7.jpg',
         price: 120.00
     },
     {
         id: 2,
-        name: 'PRODUCT NAME 2',
-        image: '2.PNG',
+        name: 'BREAKFAST',
+        image: '8.jpg',
         price: 130.00
     },
     {
         id: 3,
-        name: 'PRODUCT NAME 3',
-        image: '3.PNG',
+        name: 'MOGODU',
+        image: '9.jpg',
         price: 220.00
     },
     {
         id: 4,
-        name: 'PRODUCT NAME 4',
-        image: '4.PNG',
+        name: 'BEEF STEW',
+        image: '10.jpg',
         price: 125.00
     },
     {
         id: 5,
-        name: 'PRODUCT NAME 5',
-        image: '5.PNG',
+        name: 'CHAKALAKA CHICKEN',
+        image: '11.jpg',
         price: 150.00
     },
     {
         id: 6,
-        name: 'PRODUCT NAME 6',
-        image: '6.PNG',
+        name: 'BRAAI MIX',
+        image: '12.jpg',
         price: 160.00
     },
 ];
