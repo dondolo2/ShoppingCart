@@ -28,7 +28,8 @@ header .shopping {
 header .shopping img {
     width: 40px;
     background-color: rgb(127, 162, 162);
-    mix-blend-mode: lighten;
+    mix-blend-mode: soft-light;
+    border: #dce0e1 2px solid;
 }
 
 header .shopping span {
