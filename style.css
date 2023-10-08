@@ -1,5 +1,6 @@
 body {
-    background-color: #E3E7E8;
+    /*background-color: #E3E7E8;*/
+    background-color: #343b3d;
     font-family: system-ui;
 }
 
@@ -7,6 +8,10 @@ body {
     width: 1000px;
     margin: auto;
     transition: 0.5s;
+}
+
+.container h1 {
+    color: #fff;
 }
 
 header {
@@ -22,6 +27,8 @@ header .shopping {
 
 header .shopping img {
     width: 40px;
+    background-color: rgb(127, 162, 162);
+    mix-blend-mode: lighten;
 }
 
 header .shopping span {
@@ -101,12 +108,15 @@ header .shopping span {
     text-align: center;
     background-color: #dce0e1;
     padding: 20px;
-    box-shadow: 0 50px 50px #757676;
+    box-shadow: 0 50px 50px #637070;
     letter-spacing: 1px;
+    border-radius: 10px;
 }
 
 .list .item img {
     width: 90%;
+    border-radius: 15px;
+    mix-blend-mode: darken;
 }
 
 .list .item .title {
