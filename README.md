@@ -1,2 +1,2 @@
 # ShoppingCart
-This is my first Shopping Cart
+Hello there, I hope you like my website
