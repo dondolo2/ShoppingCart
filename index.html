@@ -11,8 +11,10 @@
     <div class="container">
         <header>
             <h1>Your Shopping Cart</h1>
-            <div class="shopping">
-                <img src="img/shopping.svg">
+            <div class="shopping" tabindex="0" role="button" aria-label="Open shopping cart">
+                <button class="openCartBtn" aria-label="Open shopping cart">
+                <img src="img/shopping.svg" alt="Shopping cart icon">
+            </button>
                 <span class="quantity">0</span>
             </div>
         </header>
@@ -22,9 +24,14 @@
     <div class="card">
         <h1>Card</h1>
         <ul class="listCard"></ul>
+        <div class="emptyMessage">
+            Your cart is empty.
+            <button class="continueBtn">Continue Shopping</button>
+        </div>
+        
         <div class="checkOut">
             <div class="total">0</div>
-            <div class="closeShopping">Close</div>
+            <div class="closeShopping" tabindex="0" role="button" aria-label="Close shopping cart">Close</div>
         </div>
     </div>
     <div class="feedback">Item added to cart!</div>

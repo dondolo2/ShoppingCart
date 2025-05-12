@@ -5,6 +5,7 @@ let listCard = document.querySelector(".listCard");
 let body = document.querySelector("body");
 let total = document.querySelector(".total");
 let quantity = document.querySelector(".quantity");
+let openShoppingCart = document.querySelector(".openCartBtn");
 
 openShopping.addEventListener("click", () => {
   body.classList.add("active");
@@ -60,7 +61,9 @@ function initApp() {
             <img src="img/${value.image}">
             <div class="title">${value.name}</div>
             <div class="price">${value.price.toLocaleString()}</div>
-            <button onclick="addToCart(${key})">Add To Cart</button>
+            <button onclick="addToCart(${key})" aria-label="Add ${
+      value.name
+    } to cart">Add To Cart</button>
         `;
     list.appendChild(newDiv);
   });
@@ -88,6 +91,8 @@ function reloadCart() {
   listCard.innerHTML = "";
   let count = 0;
   let totalPrice = 0;
+  let emptyMessage = document.querySelector(".emptyMessage");
+
   listCards.forEach((value, key) => {
     totalPrice = totalPrice + value.price;
     count = count + value.quantity;
@@ -95,28 +100,40 @@ function reloadCart() {
     if (value != null) {
       let newDiv = document.createElement("li");
       newDiv.innerHTML = `
-                <div><img src="img/${value.image}"/></div>
+                <div><img src="img/${value.image}" alt="${value.name}"/></div>
                 <div>${value.name}</div>
                 <div>${value.price.toLocaleString()}</div>
                 <div>${value.quantity}</div>
                 <div>
                         <button onclick="changeQuantity(${key}, ${
         value.quantity - 1
-      })">-</button>
+      })" aria-label="Decrease quantity of ${value.name}">-</button>
+
                         <div class="count">${value.quantity}</div>
+                        
                         <button onclick="changeQuantity(${key}, ${
         value.quantity + 1
-      })">+</button>
+      })" aria-label="Increase quantity of ${value.name}">+</button>
                 </div>
 
                 <div>
-                    <button class="removeBtn" onclick="removeFromCart(${key})">Remove</button>
+                    <button class="removeBtn" onclick="removeFromCart(${key})" aria-label="Remove ${
+        value.name
+      } from cart">Remove</button>
                 </div>
             `;
       listCard.appendChild(newDiv);
     }
   });
-  total.innerText = totalPrice.toLocaleString();
+
+  // Show or hide empty cart message
+  if (count === 0) {
+    emptyMessage.style.display = "flex";
+  } else {
+    emptyMessage.style.display = "none";
+  }
+
+  total.innerText = "R " + totalPrice.toLocaleString();
   quantity.innerText = count;
 }
 
@@ -138,3 +155,67 @@ function removeFromCart(key) {
 document.querySelector(".overlay").addEventListener("click", () => {
   body.classList.remove("active");
 });
+
+document.querySelector(".continueBtn").addEventListener("click", () => {
+  body.classList.remove("active");
+});
+
+//ACCESSIBILITY
+openShopping.addEventListener("keydown", (e) => {
+  if (e.key === "Enter" || e.key === " ") {
+    body.classList.add("active");
+
+    // Wait for cart to be visible before trapping focus
+    setTimeout(() => {
+      const cart = document.querySelector(".card");
+      trapFocus(cart, true); // Enable focus
+      cart.querySelector(".closeShopping").focus(); // focus something in cart
+    }, 100);
+  }
+});
+
+document.querySelector(".closeShopping").addEventListener("keydown", (e) => {
+  if (e.key === "Enter" || e.key === " ") {
+    body.classList.remove("active");
+
+    const cart = document.querySelector(".card");
+    trapFocus(cart, false); // Disable focus
+
+    openShopping.focus(); // Send focus back to trigger // Return focus to open button
+  }
+});
+
+function trapFocus(container, enable) {
+  const focusableElements = container.querySelectorAll(
+    'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+  );
+
+  focusableElements.forEach((el) => {
+    if (enable) {
+      el.removeAttribute("tabindex");
+    } else {
+      el.setAttribute("tabindex", "-1"); // Make them not focusable
+    }
+  });
+
+  if (!enable) return;
+
+  const firstElement = focusableElements[0];
+  const lastElement = focusableElements[focusableElements.length - 1];
+
+  container.addEventListener("keydown", (e) => {
+    if (e.key === "Tab") {
+      if (e.shiftKey) {
+        if (document.activeElement === firstElement) {
+          e.preventDefault();
+          lastElement.focus();
+        }
+      } else {
+        if (document.activeElement === lastElement) {
+          e.preventDefault();
+          firstElement.focus();
+        }
+      }
+    }
+  });
+}

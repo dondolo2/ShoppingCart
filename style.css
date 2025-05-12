@@ -270,6 +270,41 @@ body.active {
     cursor: pointer;
 }
 
+
+/* "Empty Cart Warning" Pop-up*/
+
+.emptyMessage {
+    color: white;
+    text-align: center;
+    padding: 20px;
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.emptyMessage .continueBtn {
+    background-color: #e8bc0e;
+    border: none;
+    padding: 10px 20px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.emptyMessage .continueBtn:hover {
+    background-color: #d1a907;
+}
+
+
+
+button:focus,
+.closeShopping:focus,
+.openCartBtn:focus {
+    outline: 2px solid #e8bc0e;
+    outline-offset: 2px;
+}
+
 /* "Item Added" Pop-up*/
 
 .feedback {
