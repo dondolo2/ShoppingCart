@@ -1,48 +1,101 @@
-# ShoppingCart
+Shopping Cart – Birsh
+A responsive and accessible shopping cart built with HTML, CSS, and JavaScript. Users can browse products, add items to a cart, adjust quantities, and experience a fully interactive interface across devices.
 
-1. Responsiveness
-   Adjust .container width: Use max-width: 1000px; width: 100%; for better flexibility on different screen sizes.
+Features
 
-Add media queries for smaller screens (e.g., tablets, mobile) to ensure the layout adjusts properly (e.g., switch grid to single column).
+1. Product Listing and Cart System
+   Displays product items with images, names, and prices.
 
-2. Button Interactivity
-   Hover and active states for buttons:
+Each item includes an "Add to Cart" button.
 
-Add hover effects to .list .item button, .card .checkOut div, and .listCard button for better user feedback (e.g., change background color on hover).
+A shopping cart icon displays total items added.
 
-Add active state for buttons to highlight when clicked.
+A side cart (.card) opens on click and slides in from the right.
 
-3. Cart Overlay (Optional)
-   Dim the background when the cart is open:
+2. Quantity Control & Price Calculation
+   Adjust item quantities with + and – buttons.
 
-Use a background overlay (::before) to darken the area behind the cart, making the cart stand out more.
+Total price updates in real-time.
 
-4. Cart Layout Improvements
-   Align quantity controls in .listCard more consistently (e.g., add more spacing around quantity buttons).
+Option to remove items individually from the cart.
 
-Padding and spacing inside .listCard li to ensure elements don't appear cramped.
+Price updates dynamically based on quantity.
 
-5. Improve Cart Transition
-   Smooth out the cart’s sliding transition and use calc(100% - 500px) in .active .card to make sure the cart slides in from the right side.
+3. Cart UX Enhancements
+   Empty cart warning with message and "Continue Shopping" button.
 
-6. UI Enhancements
-   Improve Cart Title Styling: Add more styling to .card h1 to make it more prominent.
+Cart scrollable when content overflows.
 
-Adjust product images: Set a fixed width for the product images in .list .item img for consistency.
+Prevents scrolling of the main page when cart is open.
 
-7. Add Cart Summary Section
-   Show itemized prices inside the cart to let users see the price for each quantity and the total for that product.
+Cart closes when clicking on the overlay area (body.active:before).
 
-8. Enhance Product Addition Feedback
-   Add a message or animation to confirm that an item was successfully added to the cart (e.g., "Item added" pop-up or subtle animation).
+Smooth cart opening/closing transitions.
 
-9. Optimize Product Prices
-   Currency Formatting: Ensure that the .price is consistently formatted (with toLocaleString() for localization).
+4. Responsive Design
+   Media queries for tablet and mobile breakpoints.
 
-10. Empty Cart Warning
-    Display a message when the cart is empty, and show an option to continue shopping or clear the cart.
+Adjusts grid layout from 3 columns to 1 for small screens.
 
-11. Accessibility
-    Alt text for images: Add descriptive alt attributes to product images for screen readers.
+Cart and product layout scales properly on all screen sizes.
 
-Keyboard accessibility: Ensure buttons are accessible via keyboard (i.e., tabindex, aria-label).
+.listCard and other UI elements resize accordingly.
+
+5. Visual and Feedback Enhancements
+   Fixed width for product images for consistent display.
+
+Visual confirmation message (Item added to cart) upon product addition.
+
+Improved spacing and layout in .listCard to avoid cramped content.
+
+6. Accessibility Improvements
+   All images include descriptive alt text.
+
+All interactive elements include aria-labels.
+
+Added tabindex and focus styles for keyboard navigation.
+
+Focus trap activated when cart is open: Tab key cycles within cart only.
+
+Focus trap deactivated when cart is closed: Tab skips cart.
+
+Screenshots
+Main Screen (Product List)
+Place your screenshot here of the default landing screen with product list.
+
+![Main Screen](screenshots/main-screen.png)
+
+Shopping Cart (Cart Opened)
+Place your screenshot here of the cart opened showing added items continued.
+
+![Main Screen Continued](screenshots/main-screen2.png)
+
+Shopping Cart (Cart Opened)
+Place your screenshot here of the cart opened showing added items.
+
+![Shopping Cart](screenshots/cart-screen.png)
+
+Technologies Used
+HTML5
+
+CSS3
+
+Vanilla JavaScript (ES6+)
+
+Accessibility Checklist
+Alt text on all images
+
+ARIA labels on interactive elements
+
+Tab navigation for all actionable UI
+
+Focus trapping within modal/cart
+
+Visual focus indicators
+
+How to Run
+Clone the repository.
+
+Make sure the img/ folder contains all product images (1.PNG, 2.PNG, etc.).
+
+Open index.html in your browser.
