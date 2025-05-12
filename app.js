@@ -69,10 +69,19 @@ initApp();
 
 function addToCart(key) {
   if (listCards[key] == null) {
-    listCards[key] = products[key];
+    listCards[key] = { ...products[key] }; // clone to avoid reference issues
     listCards[key].quantity = 1;
   }
   reloadCart();
+  showFeedback();
+}
+
+function showFeedback() {
+  const feedback = document.querySelector(".feedback");
+  feedback.classList.add("show");
+  setTimeout(() => {
+    feedback.classList.remove("show");
+  }, 1500);
 }
 
 function reloadCart() {

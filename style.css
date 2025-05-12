@@ -117,8 +117,11 @@ header .shopping span {
 }
 
 .list .item img {
-    width: 80%;
     max-width: 200px;
+    height: 200px;
+    object-fit: cover;
+    margin: auto;
+    display: block;
 }
 
 .list .item .title {
@@ -252,6 +255,28 @@ body.active {
     cursor: pointer;
 }
 
+/* "Item Added" Pop-up*/
+
+.feedback {
+    position: fixed;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #1c1f25;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 8px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 10;
+}
+
+.feedback.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(-10px);
+}
+
 /* Media Query for Tablets */
 @media (max-width: 1024px) {
     .list {
@@ -285,6 +310,51 @@ body.active {
     }
 }
 
+/* For tablets (768px and below) */
+@media screen and (max-width: 768px) {
+    .card {
+        width: 100%;
+        left: 100%;
+    }
+
+    .active .card {
+        left: 0;
+    }
+
+    .listCard li {
+        grid-template-columns: 60px 1fr;
+        grid-template-rows: auto auto;
+        row-gap: 10px;
+        padding: 10px;
+    }
+
+    .listCard li div:nth-child(3),
+    .listCard li div:nth-child(4) {
+        grid-column: span 2;
+        justify-content: space-between;
+    }
+
+    .listCard li img {
+        width: 100%;
+    }
+}
+
+/* For small phones (480px and below) */
+@media screen and (max-width: 480px) {
+    .listCard li {
+        font-size: 14px;
+    }
+
+    .listCard button {
+        padding: 5px;
+        font-size: 12px;
+    }
+
+    .listCard .count {
+        margin: 0 5px;
+    }
+}
+
 
 
 /* Media Query for Mobile Devices */
@@ -301,7 +371,6 @@ body.active {
 
     .list .item img {
         width: 80%;
-        /* Make images slightly smaller */
     }
 
     .card {
