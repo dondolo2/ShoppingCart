@@ -1,101 +1,86 @@
-Shopping Cart – Birsh
-A responsive and accessible shopping cart built with HTML, CSS, and JavaScript. Users can browse products, add items to a cart, adjust quantities, and experience a fully interactive interface across devices.
+# Shopping Cart
 
-Features
+A responsive and accessible shopping cart built with HTML, CSS, and JavaScript. Users can browse products, add items to the cart, adjust quantities, and experience a fully interactive interface across devices.
 
-1. Product Listing and Cart System
-   Displays product items with images, names, and prices.
+## Features
 
-Each item includes an "Add to Cart" button.
+### 1. Product Listing and Cart System
 
-A shopping cart icon displays total items added.
+- Displays product items with images, names, and prices.
+- Each item includes an **"Add to Cart"** button.
+- A shopping cart icon displays total items added.
+- A side cart (`.card`) opens on click and slides in from the right.
 
-A side cart (.card) opens on click and slides in from the right.
+### 2. Quantity Control & Price Calculation
 
-2. Quantity Control & Price Calculation
-   Adjust item quantities with + and – buttons.
+- Adjust item quantities with + and – buttons.
+- Total price updates in real-time.
+- Option to remove items individually from the cart.
+- Price updates dynamically based on quantity.
 
-Total price updates in real-time.
+### 3. Cart UX Enhancements
 
-Option to remove items individually from the cart.
+- **Empty cart warning** with message and "Continue Shopping" button.
+- Cart scrollable when content overflows.
+- Prevents scrolling of the main page when cart is open.
+- Cart closes when clicking on the overlay area (`body.active:before`).
+- Smooth cart opening/closing transitions.
 
-Price updates dynamically based on quantity.
+### 4. Responsive Design
 
-3. Cart UX Enhancements
-   Empty cart warning with message and "Continue Shopping" button.
+- Media queries for tablet and mobile breakpoints.
+- Adjusts grid layout from 3 columns to 1 for small screens.
+- Cart and product layout scales properly on all screen sizes.
+- `.listCard` and other UI elements resize accordingly.
 
-Cart scrollable when content overflows.
+### 5. Visual and Feedback Enhancements
 
-Prevents scrolling of the main page when cart is open.
+- Fixed width for product images for consistent display.
+- Visual confirmation message (`Item added to cart`) upon product addition.
+- Improved spacing and layout in `.listCard` to avoid cramped content.
 
-Cart closes when clicking on the overlay area (body.active:before).
+### 6. Accessibility Improvements
 
-Smooth cart opening/closing transitions.
+- All images include descriptive `alt` text.
+- All interactive elements include `aria-label`s.
+- Added `tabindex` and focus styles for keyboard navigation.
+- **Focus trap** activated when cart is open: Tab key cycles within cart only.
+- **Focus trap deactivated** when cart is closed: Tab skips cart.
 
-4. Responsive Design
-   Media queries for tablet and mobile breakpoints.
+## Screenshots
 
-Adjusts grid layout from 3 columns to 1 for small screens.
-
-Cart and product layout scales properly on all screen sizes.
-
-.listCard and other UI elements resize accordingly.
-
-5. Visual and Feedback Enhancements
-   Fixed width for product images for consistent display.
-
-Visual confirmation message (Item added to cart) upon product addition.
-
-Improved spacing and layout in .listCard to avoid cramped content.
-
-6. Accessibility Improvements
-   All images include descriptive alt text.
-
-All interactive elements include aria-labels.
-
-Added tabindex and focus styles for keyboard navigation.
-
-Focus trap activated when cart is open: Tab key cycles within cart only.
-
-Focus trap deactivated when cart is closed: Tab skips cart.
-
-Screenshots
-Main Screen (Product List)
-Place your screenshot here of the default landing screen with product list.
+### Main Screen (Product List)
 
 ![Main Screen](screenshots/main-screen.png)
 
-Shopping Cart (Cart Opened)
-Place your screenshot here of the cart opened showing added items continued.
+### Main Screen Continued (Product List)
 
-![Main Screen Continued](screenshots/main-screen2.png)
+![Main Screen](screenshots/main-screen2.png)
 
-Shopping Cart (Cart Opened)
-Place your screenshot here of the cart opened showing added items.
+### Shopping Cart (Cart Opened)
 
 ![Shopping Cart](screenshots/cart-screen.png)
 
-Technologies Used
-HTML5
+## Technologies Used
 
-CSS3
+- HTML5
+- CSS3
+- JavaScript (ES6+)
 
-Vanilla JavaScript (ES6+)
+## Accessibility Checklist
 
-Accessibility Checklist
-Alt text on all images
+- [x] Alt text on all images
+- [x] ARIA labels on interactive elements
+- [x] Tab navigation for all actionable UI
+- [x] Focus trapping within modal/cart
+- [x] Visual focus indicators
 
-ARIA labels on interactive elements
+## How to Run
 
-Tab navigation for all actionable UI
+1. Clone the repository.
+2. Make sure the `img/` folder contains all product images (`1.PNG`, `2.PNG`, etc.).
+3. Open `index.html` in your browser.
 
-Focus trapping within modal/cart
+---
 
-Visual focus indicators
-
-How to Run
-Clone the repository.
-
-Make sure the img/ folder contains all product images (1.PNG, 2.PNG, etc.).
-
-Open index.html in your browser.
+Made with 💛 by Musa Dondolo
