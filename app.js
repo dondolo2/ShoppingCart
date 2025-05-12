@@ -107,7 +107,11 @@ function reloadCart() {
                         <button onclick="changeQuantity(${key}, ${
         value.quantity + 1
       })">+</button>
-                    </div>
+                </div>
+
+                <div>
+                    <button class="removeBtn" onclick="removeFromCart(${key})">Remove</button>
+                </div>
             `;
       listCard.appendChild(newDiv);
     }
@@ -123,6 +127,11 @@ function changeQuantity(key, quantity) {
     listCards[key].quantity = quantity;
     listCards[key].price = quantity * products[key].price;
   }
+  reloadCart();
+}
+
+function removeFromCart(key) {
+  delete listCards[key];
   reloadCart();
 }
 

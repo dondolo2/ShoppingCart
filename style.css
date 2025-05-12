@@ -189,6 +189,21 @@ header .shopping span {
     text-align: center;
 }
 
+.removeBtn {
+    background-color: #ff4d4f;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    margin-top: 5px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.removeBtn:hover {
+    background-color: #e04143;
+}
+
 /*============================*/
 
 /* Active States for body overlay */
