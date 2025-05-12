@@ -22,7 +22,7 @@ let products = [
   },
   {
     id: 2,
-    name: "Chicken Wings with Chilli Sauce",
+    name: "Wings with Chilli Sauce",
     image: "2.PNG",
     price: 130.0,
   },
@@ -116,3 +116,7 @@ function changeQuantity(key, quantity) {
   }
   reloadCart();
 }
+
+document.querySelector(".overlay").addEventListener("click", () => {
+  body.classList.remove("active");
+});
